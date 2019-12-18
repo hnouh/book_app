@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2019_12_17_075801) do
   create_table "authors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.date "birthdate"
+    t.integer "birthdate"
     t.string "nationality"
     t.string "img"
     t.datetime "created_at", precision: 6, null: false
