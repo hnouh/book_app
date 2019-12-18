@@ -1,0 +1,46 @@
+<div class = "container-fluid" style="background-color: black;">
+<ul class="nav nav-pills nav-justified">
+  <li class="nav-item">
+    <a class="nav-link active" href="/">Book</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/authors/new">Create New Author</a>
+  </li>
+ 
+ 
+</ul>
+</div>
+
+<h1>All the Authors</h1>
+
+<%= link_to "Add an Author", new_author_path, { :class => "button waves-effect waves-light btn" } %>
+<br><br>
+
+<table class="table table-hover striped bordered">
+  <tr>
+    <th>Author</th>
+    <th>Image</th>
+    <th>Nationality</th>
+    <th>Birth date</th>
+    <th>Books</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+
+  <% @authors.each do |authors| %>
+      <tr>
+        <td><%= link_to authors.first_name+" "+authors.last_name , author_path(authors) %></td>
+        <td><%= image_tag(authors.img, size: "100x100", alt: "Author Image") %></td>
+        <td><%= authors.nationality %></td>
+        <td><%= authors.birthdate %></td>
+        <td><%= authors.books.count %></td>
+        <td><a class="glyphicon glyphicon-edit" href="<%= edit_author_path(authors) %>" >
+          </a>  
+    	  </td>
+
+        <td><a class="glyphicon glyphicon-trash" data-confirm="Are you sure you want to delete <%= authors.first_name+" "+authors.last_name %>?" data-method="delete" href="/authors/<%= authors.id %>" rel="nofollow">
+    	   </a>
+        </td> 
+      </tr>
+  <% end %>
+</table>

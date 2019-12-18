@@ -1,0 +1,23 @@
+<%= form_for @authors do |f| %>
+  <div class="input-field col s6">
+  	<%= f.label :first_name, 'First name'%>
+  	<%= f.text_field :first_name%>
+  </div>
+  <div class="input-field col s6">
+  	<%= f.label :last_name, 'Last name'%>
+  	<%= f.text_field :last_name%>
+  </div>
+  <div class="input-field col s6">
+  	<%= f.label :birthdate, 'Birth date' %>
+  	<%= f.text_field :birthdate %>
+  </div>
+  <div class="input-field col s6">
+  	<%= f.label :nationality, 'Nationality' %>
+  	<%= f.text_field :nationality %>
+  </div>
+  <div class="input-field col s6">
+  	<%= f.label :img, 'Image' %>
+  	<%= f.text_field :img %>
+  </div>
+  <%= f.submit "Submit", :class => "btn waves-effect waves-light" %>
+<% end %>
